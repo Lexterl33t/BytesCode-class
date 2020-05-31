@@ -4,7 +4,30 @@ end
 
 class BytesCode
 
-    def self.to_opcode(file)
+    def self.countdown(shellcode)
+        shellcode_array = shellcode.split('\x')
+        no_authorized = ["00", "FF", "0D", "0A", "ff", "0d", "0a"]
+        final_rez = []
+        shellcode_array.each do |bytes|
+           
+            no_authorized.each do |no_auth|
+                if bytes == no_auth
+                    shellcode_array.delete(bytes)
+                end
+            end
+        end
+    
+        shellcode_array.each do |octet|
+            if octet != ""
+                final_rez << "\\x#{octet}"
+            end
+    
+        end
+        return final_rez.join
+    
+    end
+
+    def self.to_opcode(file, countdown=false)
 
         if(File.file?(file) == false)
             raise FileError, "#{file} => File not found"
@@ -21,9 +44,15 @@ class BytesCode
             final_res << "\\x#{data}"
         end
 
-        return final_res.join
+        if(countdown == false)
+            return final_res.join
+        else
+            return self.countdown(final_res.join)
+        end
     end
 
 end
+
+
 
 
