@@ -19,7 +19,7 @@ gem install BytesCode
 ```
 ## Screenshot of test
 <p align="center">
-  <img width="1000" height="400" src="https://github.com/MuhamRB/BytesCode-class/blob/master/2020-05-31_11-59.png">
+  <img width="1000" height="600" src="https://github.com/MuhamRB/BytesCode-class/blob/master/2020-05-31_11-59.png">
 </p>
 
 <p align="center">
