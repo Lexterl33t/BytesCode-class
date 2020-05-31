@@ -23,7 +23,7 @@ gem install BytesCode
 </p>
 
 <p align="center">
-  <img width="900" height="500" src="https://github.com/MuhamRB/BytesCode-class/blob/master/2020-05-31_12-01.png">
+  <img width="900" height="500" src="https://github.com/MuhamRB/BytesCode-class/blob/master/2020-05-31_12-09.png">
 </p>
 
 ## Authors
