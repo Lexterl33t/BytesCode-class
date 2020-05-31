@@ -17,6 +17,36 @@ gem install BytesCode
 ```ruby
     BytesCode.to_opcode("executable")
 ```
+
+##Binary test
+
+```asm
+global _start
+
+_start:
+    jmp short string
+
+
+code:
+    pop rsi
+    xor rax, rax
+    mov al, 1
+    mov rdi, rax
+    mov rdx, rdi
+    add rdx, 14
+    syscall
+
+    xor rax, rax
+    add rax, 60
+    xor rdi, rdi
+    syscall
+
+string:
+    call code
+    db 'Hello, world!', 0x0A
+
+```
+
 ## Screenshot of test
 <p align="center">
   <img width="1050" height="500" src="https://github.com/MuhamRB/BytesCode-class/blob/master/2020-05-31_11-59.png">
